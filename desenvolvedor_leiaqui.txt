@@ -7,10 +7,10 @@ CONSIDERAÇÕES IMPORTANTES: MANTENHAM A BRANCH MAIN SEMPRE INTACTA. NÃO TENTEM
     Usem o arquivo "Ideias.md" para dar ideias com base no projeto. Ideias de páginas, alterações, etc... Com explicações técnicas.
 
 
-1: O botão de admin deve ser removido da págia principal e acessado apenas manualmente via url. QUando o usuário escreve, exemplo /admin
-1.1: Ao tentar entrar no /admin exigir um login. Usuário e Senha devem estar no env. Busque partes dos códigos e atualize-os para ficarem compatíveis com as novas implementações.
-2: Verificar a página principal e seu layout. Fazer melhorias e verificar se existe as seções de posts recentes, post em destaque (chamativo), etc...
-3: Avaliar alterações no projeto para facilitar o trabalho mútuo entre beckend e frontend via API. Escreva essa avaliação em formato de texto abaixo no item 4:
+1: O botão de admin deve ser removido da págia principal e acessado apenas manualmente via url. QUando o usuário escreve, exemplo /admin (completo)
+1.1: Ao tentar entrar no /admin exigir um login. Usuário e Senha devem estar no env. Busque partes dos códigos e atualize-os para ficarem compatíveis com as novas implementações. (completo)
+2: Verificar a página principal e seu layout. Fazer melhorias e verificar se existe as seções de posts recentes, post em destaque (chamativo), etc... (completo)
+3: Avaliar alterações no projeto para facilitar o trabalho mútuo entre beckend e frontend via API. Escreva essa avaliação em formato de texto abaixo no item 4: (completo)
 4:
 
 4: Avaliação da integração Backend/Frontend via API:
