@@ -15,14 +15,16 @@ class Post(db.Model):
     title = db.Column(db.String(100), nullable=False)
     content = db.Column(db.Text, nullable=False)
     references = db.Column(db.Text, nullable=True) # Armazenar como JSON ou texto formatado
+    is_highlighted = db.Column(db.Boolean, default=False) # Novo campo para post em destaque
 
     def __repr__(self):
         return f"Post(\'{self.title}\', \'{self.content[:20]}...\')"
 
 @app.route("/")
 def index():
-    posts = Post.query.order_by(Post.id.desc()).all()
-    return render_template("index.html", posts=posts)
+    highlighted_post = Post.query.filter_by(is_highlighted=True).first()
+    recent_posts = Post.query.order_by(Post.id.desc()).limit(5).all()
+    return render_template("index.html", highlighted_post=highlighted_post, recent_posts=recent_posts)
 
 @app.route("/admin")
 def admin_dashboard():
@@ -35,11 +37,12 @@ def new_post():
         title = request.form["title"]
         content = request.form["content"]
         references = request.form["references"]
+        is_highlighted = bool(request.form.get("is_highlighted"))
         
         if not title or not content:
             flash("Título e conteúdo são obrigatórios!", "danger")
         else:
-            post = Post(title=title, content=content, references=references)
+            post = Post(title=title, content=content, references=references, is_highlighted=is_highlighted)
             db.session.add(post)
             db.session.commit()
             flash("Post criado com sucesso!", "success")
@@ -53,6 +56,7 @@ def edit_post(post_id):
         post.title = request.form["title"]
         post.content = request.form["content"]
         post.references = request.form["references"]
+        post.is_highlighted = bool(request.form.get("is_highlighted"))
         db.session.commit()
         flash("Post atualizado com sucesso!", "success")
         return redirect(url_for("admin_dashboard"))
