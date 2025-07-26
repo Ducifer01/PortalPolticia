@@ -7,12 +7,11 @@ CONSIDERAÇÕES IMPORTANTES: MANTENHAM A BRANCH MAIN SEMPRE INTACTA. NÃO TENTEM
     Usem o arquivo "Ideias.md" para dar ideias com base no projeto. Ideias de páginas, alterações, etc... Com explicações técnicas.
 
 
-1: O botão de admin deve ser removido da págia principal e acessado apenas manualmente via url. QUando o usuário escreve, exemplo /admin (completo)
-1.1: Ao tentar entrar no /admin exigir um login. Usuário e Senha devem estar no env. Busque partes dos códigos e atualize-os para ficarem compatíveis com as novas implementações. (completo)
-2: Verificar a página principal e seu layout. Fazer melhorias e verificar se existe as seções de posts recentes, post em destaque (chamativo), etc... (completo)
-3: Avaliar alterações no projeto para facilitar o trabalho mútuo entre beckend e frontend via API. Escreva essa avaliação em formato de texto abaixo no item 4: (completo)
-4:
+1: Ajustar todo projeto para organizar os posts. Atualmente o bolsonaro-lula.html é um post. Crie pastas dentro de template (posts) bem como organize os arquivos lá.
+2: Como dito anteriormente, bolsonaro-lula.html é um post e atualmente, ao entrar na pagina principal "/" o post bolsonaro-lula.html não é exibido. Verifique o motivo e corrija. 
+3: Verifique o projeto e garanta que a criação do banco de dados (caso não exista) está com todas as tabelas esperadas pelo o projeto.
 
+Ignore o item 4 por enquanto.
 4: Avaliação da integração Backend/Frontend via API:
    Para facilitar o trabalho mútuo entre backend e frontend, a abordagem atual com Flask e Jinja2 já permite uma boa separação de responsabilidades, onde o backend (Flask) lida com a lógica de negócio, acesso a dados e roteamento, e o frontend (HTML/CSS/JS) foca na apresentação. No entanto, para uma colaboração mais desacoplada e escalável, especialmente se o frontend se tornar uma aplicação SPA (Single Page Application) ou for desenvolvido por uma equipe separada, a transição para uma API RESTful completa seria benéfica.
 
