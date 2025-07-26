@@ -3,6 +3,7 @@ Caro colaboradores, abaixo deixarei informações importantes para vocês irem i
 
 CONSIDERAÇÕES IMPORTANTES: MANTENHAM A BRANCH MAIN SEMPRE INTACTA. NÃO TENTEM ALTERA-LA, OBRIGADO!
 
-1 Um botão “Apoie o projeto” com apoia.se que sera configurado no futuro, porém, ja deve estar pré-programado.
-2 Verifiquem o projeto e vejam o que está faltando ou com bugs, criem, corrijam e façam commits explicando. A cada pequeno grupo de commits importantes façam push na branch desenvolvimento para evitar perder as alterações feitas, mesmo que incompletas ainda. Utilizem comentários visando ajudar outros desenvolvedores a continuar ou corrigir bugs.
-3 Usem o arquivo "Ideias.md" para dar ideias com base no projeto. Ideias de páginas, alterações, etc... Com explicações técnicas.
+1 Criar lógica, caso ainda não exista para o site gerar um .env e na página principal ao ser aberta pela primeira vez, pedir para preencher formulário que irá atualizar o .env Na opção de chave secreta ter um botão para "gerar" uma chave aleatoria e armazenar no env. Um botão "Atualizar env". Após isso, sabendo que o env foi criado e atualizado, nunca mais exibir essa página. A ideia é que seja exibida apenas pela primeira vez de execução, CASO ELA NÃO EXISTA, SE JA EXISTIR, IGNORAR.(Prioridade)
+2 Um botão “Apoie o projeto” com apoia.se que sera configurado no futuro, porém, ja deve estar pré-programado.
+3 Verifiquem o projeto e vejam o que está faltando ou com bugs, criem, corrijam e façam commits explicando. A cada pequeno grupo de commits importantes façam push na branch desenvolvimento para evitar perder as alterações feitas, mesmo que incompletas ainda. Utilizem comentários visando ajudar outros desenvolvedores a continuar ou corrigir bugs.
+4 Usem o arquivo "Ideias.md" para dar ideias com base no projeto. Ideias de páginas, alterações, etc... Com explicações técnicas.
