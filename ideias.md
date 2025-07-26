@@ -1,10 +1,7 @@
 # Ideias para o Portal da Política
 
-## Melhorias Implementadas
-- ✅ Corrigido erro de coluna ausente `is_highlighted` no banco de dados
-- ✅ Atualizado texto "Sobre o Portal" com a descrição correta do projeto
-- ✅ Reorganizado templates administrativos na pasta `admin/`
-- ✅ Atualizado título do portal para "Portal da Política"
+
+IGNOREM AS IDEIAS ABAIXO, SÃO PARA UM FUTURO DISTANTE AINDA.
 
 ## Próximas Ideias de Implementação
 
