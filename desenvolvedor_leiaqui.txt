@@ -7,7 +7,7 @@ CONSIDERAÇÕES IMPORTANTES: MANTENHAM A BRANCH MAIN SEMPRE INTACTA. NÃO TENTEM
     Usem o arquivo "Ideias.md" para dar ideias com base no projeto. Ideias de páginas, alterações, etc... Com explicações técnicas.
 
 
-Buscar bugs, erros, corrigir problemas.
+Buscar bugs, erros, corrigir problemas. (completo)
 
 Bem como, atentem-se a esse erro ao tentar acessar "/" do site:
 PS C:\Users\eduar\Desktop\Projeto de Politica\DesenvolvimentoFULL> python app.py
