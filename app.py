@@ -77,3 +77,35 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
     app.run(debug=True, host="0.0.0.0", port=5000)
+
+
+@app.before_request
+def check_env_file():
+    if not os.path.exists(".env"):
+        if request.endpoint != "initial_setup" and request.endpoint != "static":
+            return redirect(url_for("initial_setup"))
+
+@app.route("/initial_setup", methods=["GET", "POST"])
+def initial_setup():
+    if os.path.exists(".env"):
+        return redirect(url_for("index"))
+
+    if request.method == "POST":
+        secret_key = request.form.get("secret_key")
+        database_url = request.form.get("database_url")
+
+        if not secret_key or not database_url:
+            flash("Todos os campos são obrigatórios!", "danger")
+            return render_template("initial_setup.html")
+
+        with open(".env", "w") as f:
+            f.write(f"SECRET_KEY={secret_key}\n")
+            f.write(f"DATABASE_URL={database_url}\n")
+        
+        load_dotenv() # Recarrega as variáveis de ambiente
+        flash("Configuração salva com sucesso!", "success")
+        return redirect(url_for("index"))
+
+    return render_template("initial_setup.html")
+
+
