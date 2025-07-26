@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, url_for, request, flash
+from flask import Flask, render_template, redirect, url_for, request, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 
@@ -28,9 +28,11 @@ def index():
 
 @app.route("/admin")
 def admin_dashboard():
+    if "logged_in" not in session or not session["logged_in"]:
+        flash("Por favor, faça login para acessar esta página.", "danger")
+        return redirect(url_for("login"))
     posts = Post.query.order_by(Post.id.desc()).all()
     return render_template("admin/dashboard.html", posts=posts)
-
 @app.route("/admin/new_post", methods=["GET", "POST"])
 def new_post():
     if request.method == "POST":
@@ -104,11 +106,40 @@ def initial_setup():
         with open(".env", "w") as f:
             f.write(f"SECRET_KEY={secret_key}\n")
             f.write(f"DATABASE_URL={database_url}\n")
+            f.write(f"ADMIN_USERNAME=admin\n") # Placeholder
+            f.write(f"ADMIN_PASSWORD=adminpass\n") # Placeholder
         
         
         flash("Configuração salva com sucesso!", "success")
         return redirect(url_for("index"))
 
     return render_template("initial_setup.html")
+
+
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        
+        ADMIN_USERNAME = os.getenv("ADMIN_USERNAME")
+        ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD")
+
+        if username == ADMIN_USERNAME and password == ADMIN_PASSWORD:
+            session["logged_in"] = True
+            flash("Login bem-sucedido!", "success")
+            return redirect(url_for("admin_dashboard"))
+        else:
+            flash("Usuário ou senha inválidos.", "danger")
+    return render_template("login.html")
+
+@app.route("/logout")
+def logout():
+    session.pop("logged_in", None)
+    flash("Você foi desconectado.", "info")
+    return redirect(url_for("index"))
+
 
 
