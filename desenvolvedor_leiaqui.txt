@@ -3,7 +3,11 @@ Caro colaboradores, abaixo deixarei informações importantes para vocês irem i
 
 CONSIDERAÇÕES IMPORTANTES: MANTENHAM A BRANCH MAIN SEMPRE INTACTA. NÃO TENTEM ALTERA-LA, OBRIGADO!
 
-1 Criar lógica, caso ainda não exista para o site gerar um .env e na página principal ao ser aberta pela primeira vez, pedir para preencher formulário que irá atualizar o .env Na opção de chave secreta ter um botão para "gerar" uma chave aleatoria e armazenar no env. Um botão "Atualizar env". Após isso, sabendo que o env foi criado e atualizado, nunca mais exibir essa página. A ideia é que seja exibida apenas pela primeira vez de execução, CASO ELA NÃO EXISTA, SE JA EXISTIR, IGNORAR.(Prioridade)
-2 Um botão “Apoie o projeto” com apoia.se que sera configurado no futuro, porém, ja deve estar pré-programado.
-3 Verifiquem o projeto e vejam o que está faltando ou com bugs, criem, corrijam e façam commits explicando. A cada pequeno grupo de commits importantes façam push na branch desenvolvimento para evitar perder as alterações feitas, mesmo que incompletas ainda. Utilizem comentários visando ajudar outros desenvolvedores a continuar ou corrigir bugs.
-4 Usem o arquivo "Ideias.md" para dar ideias com base no projeto. Ideias de páginas, alterações, etc... Com explicações técnicas.
+    Vocês tem permissão de alterar esse arquivo, removendo abaixo o que ja foi implementado.
+    Usem o arquivo "Ideias.md" para dar ideias com base no projeto. Ideias de páginas, alterações, etc... Com explicações técnicas.
+
+
+1 Verifiquem o projeto e vejam o que está faltando ou com bugs, criem, corrijam e façam commits explicando. A cada pequeno grupo de commits importantes façam push na branch desenvolvimento para evitar perder as alterações feitas, mesmo que incompletas ainda. Utilizem comentários visando ajudar outros desenvolvedores a continuar ou corrigir bugs.
+2 Organizar o projeto para o "/" principal ter por blocos: Posts recentes, informações sobre o site. E acima de tudo em alerta um post que sera sobre o assunto do momento. Esse post pode ou não existir e o admin poderá marcar um post importante ou desmarcar no painel de admin dele... O atual templates/index.html É na vrdade um POST, portanto, renomeie para "Bolsonaro-lula.html"
+3 Padronizar layout e funcionalidade dos POSTS. Com opções para o administrador criar os posts, configurar, sem precisar escrever códigos. Usaremos como exemplo o atual templates/index.html que será convertido para bolsonaro-lula.html
+4 Implementar e garantir o funcionamento do projeto com o banco de dados sqlite atual.
