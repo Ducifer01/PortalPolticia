@@ -11,3 +11,8 @@ CONSIDERAÇÕES IMPORTANTES: MANTENHAM A BRANCH MAIN SEMPRE INTACTA. NÃO TENTEM
 2 Organizar o projeto para o "/" principal ter por blocos: Posts recentes, informações sobre o site. E acima de tudo em alerta um post que sera sobre o assunto do momento. Esse post pode ou não existir e o admin poderá marcar um post importante ou desmarcar no painel de admin dele... O atual templates/index.html É na vrdade um POST, portanto, renomeie para "Bolsonaro-lula.html"
 3 Padronizar layout e funcionalidade dos POSTS. Com opções para o administrador criar os posts, configurar, sem precisar escrever códigos. Usaremos como exemplo o atual templates/index.html que será convertido para bolsonaro-lula.html
 4 Implementar e garantir o funcionamento do projeto com o banco de dados sqlite atual.
+
+
+
+Status: (desenvolvendo)
+
