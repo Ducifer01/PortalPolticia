@@ -1,0 +1,8 @@
+Caro colaboradores, abaixo deixarei informações importantes para vocês irem implementando ou deixando "pronto" para usar depois...
+
+
+CONSIDERAÇÕES IMPORTANTES: MANTENHAM A BRANCH MAIN SEMPRE INTACTA. NÃO TENTEM ALTERA-LA, OBRIGADO!
+
+1 Um botão “Apoie o projeto” com apoia.se que sera configurado no futuro, porém, ja deve estar pré-programado.
+2 Verifiquem o projeto e vejam o que está faltando ou com bugs, criem, corrijam e façam commits explicando. A cada pequeno grupo de commits importantes façam push na branch desenvolvimento para evitar perder as alterações feitas, mesmo que incompletas ainda. Utilizem comentários visando ajudar outros desenvolvedores a continuar ou corrigir bugs.
+3 Usem o arquivo "Ideias.md" para dar ideias com base no projeto. Ideias de páginas, alterações, etc... Com explicações técnicas.

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Novo Post{% endblock %}
+
+{% block content %}
+<section class="admin-section">
+    <div class="container">
+        <div class="admin-header">
+            <h1>Criar Novo Post</h1>
+            <a href="{{ url_for('admin_dashboard') }}" class="btn-secondary">Voltar ao Dashboard</a>
+        </div>
+
+        <div class="post-form-container">
+            <form method="POST" class="post-form">
+                <div class="form-group">
+                    <label for="title">Título do Post:</label>
+                    <input type="text" id="title" name="title" required maxlength="100" placeholder="Digite o título do post">
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Conteúdo:</label>
+                    <textarea id="content" name="content" required rows="20" placeholder="Digite o conteúdo do post em HTML ou texto simples..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="references">Referências (opcional):</label>
+                    <textarea id="references" name="references" rows="5" placeholder="Digite as referências do post..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Criar Post</button>
+                    <a href="{{ url_for('admin_dashboard') }}" class="btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="help-section">
+            <h3>Dicas para Criação de Posts:</h3>
+            <ul>
+                <li>Use HTML básico para formatação (h2, h3, p, strong, em, ul, li, a)</li>
+                <li>Para links de referência, use: &lt;a href="#ref1" class="reference-link"&gt;[1]&lt;/a&gt;</li>
+                <li>Para notas importantes, use: &lt;div class="important-note"&gt;...&lt;/div&gt;</li>
+                <li>Para argumentos pró/contra, use as classes: argument-pro e argument-contra</li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

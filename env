@@ -1,0 +1,4 @@
+SECRET_KEY=sua_chave_secreta_muito_segura_aqui_123456789
+DATABASE_URL=sqlite:///site.db
+FLASK_ENV=development
+FLASK_DEBUG=True

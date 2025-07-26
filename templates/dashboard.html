@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard Administrativo{% endblock %}
+
+{% block content %}
+<section class="admin-section">
+    <div class="container">
+        <div class="admin-header">
+            <h1>Dashboard Administrativo</h1>
+            <a href="{{ url_for('new_post') }}" class="btn-primary">Novo Post</a>
+        </div>
+
+        <div class="admin-stats">
+            <div class="stat-card">
+                <h3>{{ posts|length }}</h3>
+                <p>Posts Totais</p>
+            </div>
+        </div>
+
+        <div class="posts-management">
+            <h2>Gerenciar Posts</h2>
+            {% if posts %}
+            <div class="posts-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Conteúdo (Preview)</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for post in posts %}
+                        <tr>
+                            <td>{{ post.id }}</td>
+                            <td>{{ post.title }}</td>
+                            <td>{{ post.content[:100] }}...</td>
+                            <td class="actions">
+                                <a href="{{ url_for('post_detail', post_id=post.id) }}" class="btn-view">Ver</a>
+                                <a href="{{ url_for('edit_post', post_id=post.id) }}" class="btn-edit">Editar</a>
+                                <form method="POST" action="{{ url_for('delete_post', post_id=post.id) }}" style="display: inline;" onsubmit="return confirm('Tem certeza que deseja deletar este post?')">
+                                    <button type="submit" class="btn-delete">Deletar</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p class="no-posts">Nenhum post encontrado. <a href="{{ url_for('new_post') }}">Criar o primeiro post</a></p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+

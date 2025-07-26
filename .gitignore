@@ -1,0 +1,8 @@
+# ignora banco de dados SQLite
+/instance/site.db
+
+# Ignora arquivos de configuração do PyCharm
+/venv
+
+#ignora variaveis de ambiente
+.env

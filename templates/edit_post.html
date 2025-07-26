@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Post{% endblock %}
+
+{% block content %}
+<section class="admin-section">
+    <div class="container">
+        <div class="admin-header">
+            <h1>Editar Post</h1>
+            <a href="{{ url_for('admin_dashboard') }}" class="btn-secondary">Voltar ao Dashboard</a>
+        </div>
+
+        <div class="post-form-container">
+            <form method="POST" class="post-form">
+                <div class="form-group">
+                    <label for="title">Título do Post:</label>
+                    <input type="text" id="title" name="title" value="{{ post.title }}" required maxlength="100">
+                </div>
+
+                <div class="form-group">
+                    <label for="content">Conteúdo:</label>
+                    <textarea id="content" name="content" required rows="20">{{ post.content }}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="references">Referências (opcional):</label>
+                    <textarea id="references" name="references" rows="5">{{ post.references or '' }}</textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Atualizar Post</button>
+                    <a href="{{ url_for('admin_dashboard') }}" class="btn-secondary">Cancelar</a>
+                    <a href="{{ url_for('post_detail', post_id=post.id) }}" class="btn-view">Visualizar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

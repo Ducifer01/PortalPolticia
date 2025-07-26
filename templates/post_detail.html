@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<section class="post-detail-section">
+    <div class="container">
+        <div class="post-navigation">
+            <a href="{{ url_for('index') }}" class="btn-back">← Voltar ao Início</a>
+            <a href="{{ url_for('admin_dashboard') }}" class="btn-admin">Admin</a>
+        </div>
+
+        <article class="post-content">
+            <header class="post-header">
+                <h1>{{ post.title }}</h1>
+            </header>
+
+            <div class="post-body">
+                {{ post.content | safe }}
+            </div>
+
+            {% if post.references %}
+            <div class="post-references">
+                <h3>Referências</h3>
+                <div class="references-content">
+                    {{ post.references | safe }}
+                </div>
+            </div>
+            {% endif %}
+        </article>
+
+        <div class="post-actions">
+            <a href="{{ url_for('index') }}" class="btn-primary">Voltar ao Início</a>
+            <a href="{{ url_for('index') }}#posts-recentes" class="btn-secondary">Explorar Mais Posts</a>
+        </div>
+
+        <!-- Seção de Comentários (placeholder para integração futura com X.com) -->
+        <div class="comments-section">
+            <h3>Comentários</h3>
+            <div class="comments-placeholder">
+                <p>Sistema de comentários via X.com será implementado em breve.</p>
+                <p>Por enquanto, você pode compartilhar suas opiniões nas redes sociais usando o link desta página.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
