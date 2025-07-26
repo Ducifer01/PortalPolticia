@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Portal da Política{% endblock %}
+
+{% block content %}
+<section class="hero-main">
+    <div class="container">
+        {% if highlighted_post %}
+        <div class="highlighted-post">
+            <h2>Destaque do Momento: {{ highlighted_post.title }}</h2>
+            <p>{{ highlighted_post.content | striptags | truncate(200) }}</p>
+            <a href="{{ url_for('post_detail', post_id=highlighted_post.id) }}" class="btn-primary">Leia Mais</a>
+        </div>
+        {% endif %}
+
+        <div class="recent-posts">
+            <h2>Posts Recentes</h2>
+            {% if recent_posts %}
+            <div class="post-list">
+                {% for post in recent_posts %}
+                <div class="post-card">
+                    <h3><a href="{{ url_for('post_detail', post_id=post.id) }}">{{ post.title }}</a></h3>
+                    <p>{{ post.content | striptags | truncate(150) }}</p>
+                    <a href="{{ url_for('post_detail', post_id=post.id) }}" class="btn-secondary">Ver Post</a>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>Nenhum post recente disponível.</p>
+            {% endif %}
+        </div>
+
+        <div class="about-site">
+            <h2>Sobre o Portal da Política</h2>
+            <p>Bem-vindo ao Portal da Política, seu espaço para análise crítica e informação independente sobre o cenário político brasileiro. Nosso objetivo é fornecer conteúdo baseado em fatos, desmistificando narrativas e incentivando o senso crítico.</p>
+            <p>Acreditamos que a liberdade de informação é a base para uma sociedade mais justa e consciente. Explore nossos artigos, análises e contribua para um debate mais informado.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
