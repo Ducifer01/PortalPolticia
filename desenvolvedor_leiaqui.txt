@@ -14,5 +14,5 @@ CONSIDERAÇÕES IMPORTANTES: MANTENHAM A BRANCH MAIN SEMPRE INTACTA. NÃO TENTEM
 
 
 
-Status: (desenvolvendo)
+Status: (completo)
 
