@@ -4,8 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 
 
-load_dotenv()
-
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "uma_chave_secreta_padrao_muito_segura")
 app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL", "sqlite:///site.db")
@@ -75,6 +73,7 @@ def post_detail(post_id):
 
 if __name__ == "__main__":
     with app.app_context():
+        load_dotenv() # Carrega as variáveis de ambiente
         db.create_all()
     app.run(debug=True, host="0.0.0.0", port=5000)
 
@@ -102,7 +101,7 @@ def initial_setup():
             f.write(f"SECRET_KEY={secret_key}\n")
             f.write(f"DATABASE_URL={database_url}\n")
         
-        load_dotenv() # Recarrega as variáveis de ambiente
+        
         flash("Configuração salva com sucesso!", "success")
         return redirect(url_for("index"))
 
