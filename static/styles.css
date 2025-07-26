@@ -455,3 +455,165 @@ html {
     }
 }
 
+
+
+/* Estilos para a página principal (index.html) */
+.hero-main {
+    padding: 80px 0 40px;
+    background-color: #f0f2f5;
+    text-align: center;
+    margin-top: 60px; /* Para compensar o navbar fixo */
+}
+
+.hero-main .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.highlighted-post {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-align: left;
+}
+
+.highlighted-post h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.highlighted-post p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.highlighted-post .btn-primary {
+    display: inline-block;
+    background-color: #fff;
+    color: #1e3a8a;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.highlighted-post .btn-primary:hover {
+    background-color: #e0e0e0;
+    color: #1e3a8a;
+}
+
+.recent-posts {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.recent-posts h2 {
+    color: #1e3a8a;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.post-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.post-card h3 a {
+    color: #1e3a8a;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.post-card h3 a:hover {
+    text-decoration: underline;
+}
+
+.post-card p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.post-card .btn-secondary {
+    display: inline-block;
+    background-color: #3b82f6;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.post-card .btn-secondary:hover {
+    background-color: #1e3a8a;
+}
+
+.about-site {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.about-site h2 {
+    color: #1e3a8a;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-site p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Responsividade para a página principal */
+@media (max-width: 768px) {
+    .hero-main {
+        padding-top: 100px;
+    }
+
+    .highlighted-post h2 {
+        font-size: 2rem;
+    }
+
+    .recent-posts h2,
+    .about-site h2 {
+        font-size: 1.8rem;
+    }
+
+    .post-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
